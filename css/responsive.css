@@ -1,0 +1,210 @@
+/* Responsive Design - Mobile First */
+
+/* Tablette et desktop */
+@media (max-width: 1024px) {
+  .hero-background {
+    background-attachment: scroll; /* Performance sur tablettes/téléphones */
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-item.large {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .reservation-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .infos-section {
+    background: var(--bg-primary);
+  }
+
+  .infos-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .map-container {
+    min-height: 300px;
+    order: -1;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-primary-dark);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-base);
+  }
+
+  .main-nav.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .nav-link {
+    font-size: 1.25rem;
+  }
+
+  .theme-toggle {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .hero-background {
+    background-attachment: scroll; /* Fix pour iOS */
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 200px;
+  }
+
+  .gallery-item.large {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: var(--space-lg);
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: var(--space-sm);
+    text-align: center;
+  }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .section {
+    padding: var(--space-xl) 0;
+  }
+
+  .reservation-form {
+    padding: var(--space-lg);
+  }
+}
+
+/* Mode paysage sur mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: 500px;
+    height: auto;
+    padding: var(--space-xxl) 0;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+/* Container Queries pour composants */
+.menu-item {
+  container-type: inline-size;
+}
+
+@container (min-width: 400px) {
+  .menu-item {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+  }
+
+  .menu-item-image {
+    height: 100%;
+  }
+}
+
+/* Respect des préférences utilisateur */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Impression */
+@media print {
+  /* Forcer le thème clair pour l'impression */
+  :root {
+    --bg-primary: #f8f5f0;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #e8e8e8;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --text-on-primary: #ffffff;
+  }
+
+  .site-header,
+  .hero,
+  .reservation-section,
+  .site-footer,
+  .scroll-indicator {
+    display: none;
+  }
+
+  .section {
+    padding: 1rem 0;
+    page-break-inside: avoid;
+  }
+
+  .menu-item {
+    break-inside: avoid;
+    border: 1px solid #ccc;
+  }
+}

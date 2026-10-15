@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Le Réconfort - Restaurant de cuisine béninoise authentique. Découvrez nos plats traditionnels et créatifs préparés avec amour dans une ambiance chaleureuse."
+    />
+    <meta name="theme-color" content="#1B4332" />
+
+    <title>Le Réconfort | Cuisine Béninoise Authentique</title>
+
+    <!-- Open Graph / réseaux sociaux -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Le Réconfort" />
+    <meta property="og:title" content="Le Réconfort | Cuisine Béninoise Authentique" />
+    <meta
+      property="og:description"
+      content="Saveurs du Bénin : plats traditionnels et carte moderne, préparés avec passion et tradition."
+    />
+    <meta property="og:image" content="assets/img/hero-restaurant.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Schema.org pour Google -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Le Réconfort",
+        "servesCuisine": "Cuisine Béninoise",
+        "priceRange": "€€",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Zogbadjè",
+          "addressLocality": "Abomey-Calavi",
+          "addressCountry": "BJ"
+        },
+        "telephone": "+22965000000",
+        "email": "contact@lereconfort.fr",
+        "openingHours": [
+          "Tu-Sa 12:00-14:30",
+          "Tu-Sa 19:00-23:00",
+          "Su 12:00-15:00"
+        ]
+      }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+    <!-- Polices Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Thème : appliqué avant le premier rendu pour éviter un flash de thème clair.
+         Le thème sombre est piloté par l'attribut data-theme sur <html> (voir css/variables.css). -->
+    <script>
+      (function () {
+        var theme = "light";
+        try {
+          var saved = localStorage.getItem("theme");
+          if (saved === "dark" || saved === "light") {
+            theme = saved;
+          } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            theme = "dark";
+          }
+        } catch (e) {
+          /* Stockage indisponible : on garde le thème clair */
+        }
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header class="site-header" id="header">
+      <div class="container nav-container">
+        <a href="#" class="logo" aria-label="Accueil Le Réconfort">
+          <span class="logo-icon" aria-hidden="true">🌿</span>
+          <span class="logo-text">Le Réconfort</span>
+        </a>
+
+        <button
+          class="mobile-menu-toggle"
+          id="menu-toggle"
+          aria-expanded="false"
+          aria-controls="main-nav"
+          aria-label="Ouvrir le menu"
+        >
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+
+        <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+          <ul class="nav-list">
+            <li><a href="#accueil" class="nav-link">Accueil</a></li>
+            <li><a href="#menu" class="nav-link">Notre Carte</a></li>
+            <li><a href="#galerie" class="nav-link">Galerie</a></li>
+            <li>
+              <a href="#reservation" class="nav-link btn-reservation"
+                >Réserver</a
+              >
+            </li>
+          </ul>
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-label="Basculer entre mode clair et sombre"
+            title="Changer de thème"
+          >
+            <span class="theme-icon" aria-hidden="true">🌙</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+      <div class="hero-background">
+        <div class="hero-content">
+          <span class="hero-tagline">Bienvenue à la maison</span>
+          <h1 class="hero-title">Le Réconfort</h1>
+          <p class="hero-subtitle">
+            Cuisine béninoise authentique, préparée avec passion et tradition
+          </p>
+          <div class="hero-buttons">
+            <a href="#menu" class="btn btn-primary">Découvrir la carte</a>
+            <a href="#reservation" class="btn btn-secondary"
+              >Réserver une table</a
+            >
+          </div>
+        </div>
+        <div class="scroll-indicator" aria-hidden="true">
+          <span>Scroll</span>
+          <div class="scroll-line"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Menu -->
+    <section id="menu" class="section menu-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Saveurs du Bénin</span>
+          <h2 class="section-title">Notre Carte</h2>
+          <p class="section-description">
+            Des recettes traditionnelles aux créations contemporaines, préparées
+            avec des ingrédients frais et authentiques
+          </p>
+        </div>
+
+        <div id="menu-container" class="menu-container">
+          <noscript>
+            <p class="empty-state">
+              La carte est affichée grâce à JavaScript. Activez-le ou
+              demandez-nous la carte par téléphone au
+              <a href="tel:+22965000000">+229 65000000</a>.
+            </p>
+          </noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galerie Photos -->
+    <section id="galerie" class="section gallery-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Ambiance</span>
+          <h2 class="section-title">Notre Univers</h2>
+        </div>
+
+        <div class="gallery-grid" id="gallery-grid">
+          <figure class="gallery-item large">
+            <img
+              src="assets/img/galerie-plat.jpg"
+              width="800"
+              height="967"
+              alt="Plat traditionnel béninois dressé avec soin"
+              class="gallery-img"
+              loading="lazy"
+            />
+            <figcaption>Assiettes généreuses</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="assets/img/galerie-salle.jpg"
+              width="600"
+              height="400"
+              alt="Salle du restaurant, ambiance chaleureuse"
+              class="gallery-img"
+              loading="lazy"
+            />
+            <figcaption>Notre salle</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="assets/img/galerie-ingredients.jpg"
+              width="600"
+              height="900"
+              alt="Ingrédients frais du marché"
+              class="gallery-img"
+              loading="lazy"
+            />
+            <figcaption>Fraîcheur garantie</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="assets/img/galerie-braise.jpg"
+              width="600"
+              height="900"
+              alt="Viande grillée au feu de bois"
+              class="gallery-img"
+              loading="lazy"
+            />
+            <figcaption>Cuisson au feu de bois</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="assets/img/galerie-dessert.jpg"
+              width="600"
+              height="725"
+              alt="Dessert maison sucré"
+              class="gallery-img"
+              loading="lazy"
+            />
+            <figcaption>Douceurs maison</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Infos & Localisation -->
+    <section id="infos" class="section infos-section">
+      <div class="container">
+        <div class="infos-grid">
+          <div class="infos-content">
+            <span class="section-tag">Venir nous voir</span>
+            <h2 class="section-title">Horaires & Accès</h2>
+
+            <div class="hours-block">
+              <h3>Horaires d'ouverture</h3>
+              <ul class="hours-list">
+                <li>
+                  <span class="day">Mardi - Samedi</span>
+                  <span class="time">12h00 - 14h30 / 19h00 - 23h00</span>
+                </li>
+                <li>
+                  <span class="day">Dimanche</span>
+                  <span class="time">12h00 - 15h00 (Brunch)</span>
+                </li>
+                <li>
+                  <span class="day">Lundi</span>
+                  <span class="time closed">Fermé</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="contact-block">
+              <h3>Contact</h3>
+              <address>
+                <p>📍 Zogbadjè, Abomey-Calavi, Bénin</p>
+                <p>📞 <a href="tel:+22965000000">+229 65000000</a></p>
+                <p>
+                  ✉️
+                  <a href="mailto:contact@lereconfort.fr"
+                    >contact@lereconfort.fr</a
+                  >
+                </p>
+              </address>
+            </div>
+          </div>
+
+          <div class="map-container">
+            <!-- URL output=embed : Google Maps sans cookies tiers (conforme RGPD) -->
+            <iframe
+              src="https://www.google.com/maps?q=Zogbadj%C3%A8%2C%20Abomey-Calavi%2C%20B%C3%A9nin&output=embed"
+              width="100%"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Localisation du restaurant Le Réconfort"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Réservation -->
+    <section id="reservation" class="section reservation-section">
+      <div class="container">
+        <div class="reservation-container">
+          <div class="reservation-content">
+            <span class="section-tag">Réservation</span>
+            <h2 class="section-title">Réservez votre table</h2>
+            <p>
+              Pour les groupes de plus de 6 personnes, merci de nous contacter
+              directement par téléphone.
+            </p>
+          </div>
+
+          <form class="reservation-form" id="reservation-form">
+            <div class="form-group">
+              <label for="nom">Nom complet</label>
+              <input
+                type="text"
+                id="nom"
+                name="nom"
+                required
+                placeholder="Votre nom"
+              />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" required />
+              </div>
+              <div class="form-group">
+                <label for="heure">Heure</label>
+                <select id="heure" name="heure" required>
+                  <option value="">Choisir...</option>
+                  <option value="12:00">12h00</option>
+                  <option value="12:30">12h30</option>
+                  <option value="13:00">13h00</option>
+                  <option value="13:30">13h30</option>
+                  <option value="19:00">19h00</option>
+                  <option value="19:30">19h30</option>
+                  <option value="20:00">20h00</option>
+                  <option value="20:30">20h30</option>
+                  <option value="21:00">21h00</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="personnes">Nombre de personnes</label>
+              <select id="personnes" name="personnes" required>
+                <option value="1">1 personne</option>
+                <option value="2" selected>2 personnes</option>
+                <option value="3">3 personnes</option>
+                <option value="4">4 personnes</option>
+                <option value="5">5 personnes</option>
+                <option value="6">6 personnes</option>
+                <option value="plus-de-6">7 personnes ou plus (nous contacter)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="telephone">Téléphone</label>
+              <input
+                type="tel"
+                id="telephone"
+                name="telephone"
+                required
+                placeholder="+229 97 00 00 00"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="votre@email.com (optionnel)"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="notes">Notes particulières</label>
+              <textarea
+                id="notes"
+                name="notes"
+                rows="3"
+                placeholder="Allergies, occasion spéciale..."
+              ></textarea>
+            </div>
+
+            <!-- Honeypot anti-spam : invisible pour les humains -->
+            <div class="form-group honeypot" aria-hidden="true">
+              <label for="entreprise">Entreprise</label>
+              <input
+                type="text"
+                id="entreprise"
+                name="entreprise"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-large">
+              <span>Envoyer ma demande</span>
+            </button>
+
+            <p class="form-privacy">
+              Votre logiciel de messagerie s'ouvrira avec la demande pré-remplie
+              à destination de
+              <a href="mailto:contact@lereconfort.fr">contact@lereconfort.fr</a>.
+              Vos données ne sont collectées par aucun serveur tiers.
+            </p>
+
+            <div
+              id="form-status"
+              class="form-status"
+              role="status"
+              aria-live="polite"
+            ></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <h3 class="footer-title">Le Réconfort</h3>
+            <p>
+              Cuisine béninoise authentique dans une ambiance conviviale et
+              chaleureuse.
+            </p>
+          </div>
+
+          <div class="footer-links">
+            <h4>Liens utiles</h4>
+            <ul>
+              <li><a href="#menu">La carte</a></li>
+              <li><a href="#reservation">Réservation</a></li>
+              <li><a href="#infos">Nous trouver</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h4>Contact</h4>
+            <ul>
+              <li>
+                <a href="tel:+22965000000">+229 65000000</a>
+              </li>
+              <li>
+                <a href="mailto:contact@lereconfort.fr"
+                  >contact@lereconfort.fr</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 Le Réconfort. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts classiques (compatibles double-clic / file://), chargés dans l'ordre via defer -->
+    <script defer src="js/data/menu.js"></script>
+    <script defer src="js/modules/navigation.js"></script>
+    <script defer src="js/modules/menuManager.js"></script>
+    <script defer src="js/modules/gallery.js"></script>
+    <script defer src="js/modules/reservation.js"></script>
+    <script defer src="js/modules/themeToggle.js"></script>
+    <script defer src="js/main.js"></script>
+  </body>
+</html>
