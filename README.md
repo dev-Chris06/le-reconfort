@@ -1,6 +1,10 @@
 # 🌿 Le Réconfort — Site du restaurant
 
 Site vitrine du restaurant **Le Réconfort**, cuisine béninoise authentique (Paris 11e).
+
+> **Projet fictif.** Le restaurant Le Réconfort n'existe pas : son nom, son
+> adresse, son menu et ses coordonnées ont été créés pour ce projet de
+> démonstration.
 HTML / CSS / JavaScript vanilla, sans framework ni étape de build : le site fonctionne tel quel.
 
 ## Structure du projet
@@ -83,3 +87,10 @@ sans aucune configuration.
 - [ ] Remplacer les photos `assets/img/` par les vraies photos du restaurant
 - [ ] Renseigner les vrais liens réseaux sociaux (le footer n'en affiche plus)
 - [ ] Mettre à jour les horaires et le JSON-LD si besoin
+
+## Licence
+
+Le code est publié sous licence MIT (voir [LICENSE](LICENSE)).
+
+Les photos du dossier `assets/img/` ne sont pas couvertes par cette licence et
+restent la propriété de leurs auteurs.
